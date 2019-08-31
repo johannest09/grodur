@@ -1,0 +1,188 @@
+@secondaryTextColor: #1c483d;
+
+.clearfix {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+.about {
+    .grid {
+        @media (min-width: 600px) {
+            display: grid;
+            grid-gap: 2em;
+            grid-template-columns: 1fr 2fr 1fr;
+        }
+    }
+}
+
+.production-grid {
+    display: grid;
+    grid-gap: 2em;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.greenhouses {
+
+    @media (min-width: 600px) {
+        article {
+            &.greenhouse {
+                grid-column: 2 / span 1;
+            }
+        }
+    
+        .grid {
+            display: grid;
+            grid-gap: 2em;
+            grid-template-columns: repeat(3, 1fr);
+    
+            figure {
+                height: 250px;
+                margin-bottom: 1em;
+            }
+        }
+    }
+    
+}
+
+.environmental {
+    figure {
+        margin-bottom: 1em;
+    }
+    @media (min-width: 600px) {
+        article {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto 1fr;
+            grid-gap: 1em;
+    
+            h3, p {
+                grid-column: 1 / span 2;
+            }
+        }
+    }
+    
+}
+
+.productivity {
+    figure {
+        margin-bottom: 1em;
+    }
+    @media(min-width: 600px) {
+        .grid {
+            display: grid;
+            grid-gap: 2em;
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}
+
+
+.map .grid {
+    @media(min-width: 600px) {
+        display: grid;
+        grid-gap: 2em;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.production-grid {
+    margin-bottom: 2em;
+    padding-bottom: 2em;
+    border-bottom: 3px dotted @secondaryTextColor;
+    .text {
+        grid-column: 1 / 1;
+    }
+    &:last-child {
+        border-bottom: 0;
+        padding-bottom: 0;
+    }
+}
+
+
+.site {
+    max-width: 60em;
+    margin: 0 auto;
+}
+
+
+@supports(grid-area: auto) {
+
+
+
+    /* Enable grid for viewports 600px and wider: */
+	@media screen and (min-width: 600px) {
+
+		/* Disable fallback max-width center aligned rule: */
+		.site {
+			max-width: none;
+        }
+        
+        .heading {
+            display: grid;
+            grid-template-columns: 2fr 6fr;
+            grid-template-rows: 1fr auto;
+
+            grid-template-areas: 
+                "logo feature"
+                "logosub navigation";
+
+            .masthead {
+                grid-area: logo;
+            }
+
+            .feature {
+                grid-area: feature;
+            }
+
+            .navigation {
+                grid-area: navigation;
+                padding-left: 3em;
+            }
+
+            .logosub {
+                grid-area: logosub;
+            }
+        }
+
+        .main-area h2 {
+            grid-column: 2 / span 2;
+        }
+
+		/* Four-column layout: Two center columns have total width of 50em: */
+		.main-area > *,
+		.footer {
+            display: grid;
+            grid-gap: 2em;
+            grid-template-columns: 1fr repeat(2, minmax(auto, 40em)) 1fr;
+            
+            .container {
+                grid-column: 2 / span 2;
+            }
+        }
+
+		/* Use automatic grid placement + span to let each item span two columns: */
+		.twin {
+            grid-column: 2 / span 1;
+
+            .content {
+                display: flex;
+                .text, figure {
+                    flex: 1;
+                }
+                .text {
+                    margin-right: 10px;
+                }
+            }
+        }
+
+        .twin + .twin {
+            grid-column: 3 / span 1;
+        }
+	}
+
+}
+
+

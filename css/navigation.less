@@ -1,0 +1,38 @@
+
+@secondaryTextColor: #1c483d;
+
+
+nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    font-family: "PT+Serif", sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 0.833em;
+    margin: 2em;
+    color: #fff;
+    justify-content: left;
+}
+
+nav a {
+    margin: 1em;
+    color: @secondaryTextColor;
+}
+
+nav a,
+nav a:visited {
+    padding-bottom: 0.1em;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+}
+
+nav a:hover,
+nav a:active {
+    //color: rgb(49, 41, 61);
+    //border-bottom: rgb(49, 41, 61) solid 0.1em;
+}

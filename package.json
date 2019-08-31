@@ -1,0 +1,14 @@
+{
+  "name": "grodur",
+  "version": "1.0.0",
+  "description": "static page for grodur",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Johannes Thorleifsson",
+  "license": "ISC",
+  "devDependencies": {
+    "jquery-i18next": "^1.2.1"
+  }
+}

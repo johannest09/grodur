@@ -1,0 +1,16 @@
+/* Global buttons */
+.content-button {
+  padding: .5em 1em;
+  border: 3px solid #B51C35;
+  /*border-radius: 10px;*/
+  font-weight: 600;
+}
+a.content-button {
+  color: black;
+  text-decoration: none;
+}
+a.content-button:focus,
+a.content-button:hover {
+  background: #B51C35;
+  color: #FFFCED;
+}
